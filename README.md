@@ -39,6 +39,8 @@ The following tools and technologies were used to carry out this project:
 
 ## 📊 PowerBI
 
+## 🤖 Machine Learning Model
+
 ## 👥 Project Members
 
 | Name          | Role         | Special Characteristic       | GitHub Profile                          |
