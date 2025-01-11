@@ -7,8 +7,6 @@
 ![GitHub stars](https://img.shields.io/github/stars/datasilvia/Academic_performance_case_study)
 ![GitHub issues](https://img.shields.io/github/issues/datasilvia/Academic_performance_case_study)
 ![GitHub pull requests](https://img.shields.io/github/issues-pr/datasilvia/Academic_performance_case_study)
-![GitHub license](https://img.shields.io/github/license/datasilvia/Academic_performance_case_study)
-
 
 
 ## 🎯 Objectives
