@@ -1,3 +1,3 @@
 # Academic_performance_case_study
 
-![Cover Image](./images/main.png)
+![Cover Image](./images/principal.png)
