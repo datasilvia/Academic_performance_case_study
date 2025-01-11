@@ -1,6 +1,6 @@
 # Machine Learning Project: Predicting School Performance
 
-![Kanban Board](trello.png)
+![Kanban Board](Trello.png)
 
 ## Project Description 📘
 This Machine Learning project focuses on predicting school performance based on various factors. Throughout this week, we have applied and expanded our knowledge in artificial intelligence and machine learning, exploring concepts such as supervised learning, feature engineering, and more.
