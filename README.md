@@ -33,6 +33,10 @@ The following tools and technologies were used to carry out this project:
 
 ## 📋 Trello Board
 
+In this section, we explain that we used a Kanban board to organize ourselves as a group, distributing and assigning tasks efficiently. This helped us stay organized, set deadlines, and divide the workload effectively.
+
+You can see more details about how we used the Kanban board in the section [Kanban Board for Task Management](https://github.com/datasilvia/Academic_performance_case_study/tree/main/kanban_board).
+
 ## 🗂️ Project Structure
 
 ## 🌐 Streamlit App
