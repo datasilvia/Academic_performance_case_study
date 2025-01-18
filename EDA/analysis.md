@@ -1,13 +1,7 @@
 
 # Statistical Analysis of the Dataset
 
-## Gender Distribution
-| sex   |   proportion |
-|:------|-------------:|
-| F     |      57.9365 |
-| M     |      42.0635 |
-
-## Mother's Job Distribution
+## Distribution of Mother's Job
 | Mjob     |   proportion |
 |:---------|-------------:|
 | other    |     37.8685  |
@@ -16,7 +10,7 @@
 | teacher  |     12.1315  |
 | health   |      7.82313 |
 
-## Father's Job Distribution
+## Distribution of Father's Job
 | Fjob     |   proportion |
 |:---------|-------------:|
 | other    |     56.6893  |
@@ -25,7 +19,7 @@
 | teacher  |      5.3288  |
 | health   |      3.96825 |
 
-## Romantic Status Distribution
+## Distribution of Romantic Status
 | romantic   |   proportion |
 |:-----------|-------------:|
 | no         |      63.2653 |
@@ -84,3 +78,27 @@
 | 50%   |         4       |
 | 75%   |         8       |
 | max   |        75       |
+
+## Distribution of Travel Time
+|       |   traveltime |
+|:------|-------------:|
+| count |   882        |
+| mean  |     1.53061  |
+| std   |     0.730147 |
+| min   |     1        |
+| 25%   |     1        |
+| 50%   |     1        |
+| 75%   |     2        |
+| max   |     4        |
+
+## Distribution of Free Time
+|       |   freetime |
+|:------|-----------:|
+| count |  882       |
+| mean  |    3.18481 |
+| std   |    1.04869 |
+| min   |    1       |
+| 25%   |    3       |
+| 50%   |    3       |
+| 75%   |    4       |
+| max   |    5       |
