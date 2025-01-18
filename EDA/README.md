@@ -1,6 +1,6 @@
 # 📊 Statistical Analysis of the Dataset
 
-![Statistical Analysis](./images/estadistica.jpg)
+![Cover Image](../images/estadistica.jpg)
 
 This section provides a detailed statistical analysis of the dataset, including the distribution of various attributes and the average scores in Portuguese and Math based on different factors.
 
