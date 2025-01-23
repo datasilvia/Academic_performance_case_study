@@ -55,7 +55,7 @@ st.sidebar.markdown("""
 st.image(main_image_path, use_column_width=True)
 
 if option == 'Home':
-    st.title('📊 Academic Performance Analysis')
+    #st.title('📊 Academic Performance Analysis')
     st.write("""
     Welcome to the Academic Performance Case Study application. 
     Use the navigation menu on the left to explore different sections of the project.
@@ -83,6 +83,7 @@ if option == 'Home':
     - 📈 Use the Power BI section to interact with the data visualizations.
     - 🔍 Check the Prediction section to see the models and their predictions.
     """)
+
 
 elif option == 'Objectives':
     st.title('🎯 Objectives')
