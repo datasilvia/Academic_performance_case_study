@@ -106,8 +106,6 @@ The project was designed with a focus on continuous improvement. The models are 
 
 This structured and meticulous development process ensured that the project met its objectives and provided valuable insights to improve students' academic performance.
 
-## 📈 Results
-
 ## 📋 Trello Board
 
 In this section, we explain that we used a Kanban board to organize ourselves as a group, distributing and assigning tasks efficiently. This helped us stay organized, set deadlines, and divide the workload effectively.
