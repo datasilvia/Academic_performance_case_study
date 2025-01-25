@@ -1,6 +1,12 @@
 import streamlit as st
 import pandas as pd
 import os
+import numpy as np
+from sklearn.ensemble import AdaBoostClassifier
+from sklearn.model_selection import KFold
+from sklearn.metrics import confusion_matrix, accuracy_score
+import seaborn as sns
+import matplotlib.pyplot as plt
 
 # Load the dataset
 #df = pd.read_csv('path_to_your_dataset.csv')
@@ -144,5 +150,76 @@ elif option == 'Prediction':
     # Cargar los datos desde el archivo CSV
     data_path = os.path.join(current_dir, 'df_limpito_EDA.csv')
     data = pd.read_csv(data_path)
-    st.write("Here are the first 5 rows of your dataset:")
-    st.write(data.head())
+
+    # Cargar y mostrar los DataFrames tratados para cada asignatura
+    math_data_path = os.path.join(current_dir, 'ML_Math.csv')
+    portuguese_data_path = os.path.join(current_dir, 'ML_Portuguese.csv')
+
+    math_data = pd.read_csv(math_data_path)
+    portuguese_data = pd.read_csv(portuguese_data_path)
+
+
+    # Seleccionar la asignatura a predecir 
+    st.markdown("### Select the subject to predict:")
+    subject = st.radio('', ['Mathematics', 'Portuguese'], index=0, horizontal=True)
+
+    # Definir las características y la variable objetivo
+    X = math_data[['school_GP', 'age', 'address_urban', 'Medu', 'Fedu', 'studytime', 'failures', 'freetime', 'Dalc', 'Walc']]
+    y = math_data['math_pass']
+
+    # Inicializar el clasificador
+    modelo = AdaBoostClassifier(random_state=42)
+
+    # Configurar K-Fold
+    kf = KFold(n_splits=5, shuffle=True, random_state=42)
+
+    # Crear arrays para almacenar las predicciones y valores reales
+    y_pred_total = np.array([])
+    y_real_total = np.array([])
+
+    # Ejecutar K-Fold
+    for train_index, test_index in kf.split(X):
+        X_train, X_test = X.iloc[train_index], X.iloc[test_index]
+        y_train, y_test = y.iloc[train_index], y.iloc[test_index]
+
+        modelo.fit(X_train, y_train)
+        y_pred = modelo.predict(X_test)
+
+        # Almacenar las predicciones y los valores reales
+        y_pred_total = np.concatenate([y_pred_total, y_pred])
+        y_real_total = np.concatenate([y_real_total, y_test])
+
+    # Mostrar la precisión del modelo
+    accuracy = accuracy_score(y_real_total, y_pred_total)
+    st.write(f'Accuracy of the Model: {accuracy:.3f}')
+
+    # Pedir al usuario que ingrese los valores de las características
+    st.write("### Enter the values for the following features to make a prediction:")
+    school_GP = st.selectbox('🏫 School (GP=1, Other=0):', [0, 1])
+    age = st.number_input('🎂 Age:', min_value=15, max_value=22, value=17)
+    address_urban = st.selectbox('🏡 Address (Urban=1, Rural=0):', [0, 1])
+    Medu = st.number_input('👩‍🎓 Mother\'s Education (0-4):', min_value=0, max_value=4, value=2)
+    Fedu = st.number_input('👨‍🎓 Father\'s Education (0-4):', min_value=0, max_value=4, value=2)
+    studytime = st.number_input('📚 Study Time (1-4):', min_value=1, max_value=4, value=2)
+    failures = st.number_input('❌ Failures (0-3):', min_value=0, max_value=3, value=0)
+    freetime = st.number_input('🕒 Free Time (1-5):', min_value=1, max_value=5, value=3)
+    Dalc = st.number_input('🍷 Workday Alcohol Consumption (1-5):', min_value=1, max_value=5, value=1)
+    Walc = st.number_input('🍻 Weekend Alcohol Consumption (1-5):', min_value=1, max_value=5, value=2)
+
+    # Crear un DataFrame con los valores ingresados
+    input_data = pd.DataFrame({
+        'school_GP': [school_GP],
+        'age': [age],
+        'address_urban': [address_urban],
+        'Medu': [Medu],
+        'Fedu': [Fedu],
+        'studytime': [studytime],
+        'failures': [failures],
+        'freetime': [freetime],
+        'Dalc': [Dalc],
+        'Walc': [Walc]
+    })
+
+    # Hacer la predicción
+    prediction = modelo.predict(input_data)
+    st.write(f'### The predicted math pass status is: {"🎉 Pass" if prediction[0] == 1 else "❌ Fail"}')
