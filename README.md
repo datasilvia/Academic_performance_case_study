@@ -11,7 +11,54 @@
 
 ## 🎯 Objectives
 
+The main objectives of this project are:
+
+1. **📊 Analyze Factors Affecting Academic Performance**:
+   - Identify and understand the various factors that influence students' academic performance, such as demographics, family background, and study habits.
+
+2. **🔍 Identify Patterns and Correlations**:
+   - Use exploratory data analysis (EDA) to uncover patterns and correlations in the data that can provide insights into students' performance.
+
+3. **🤖 Build Predictive Models**:
+   - Develop and evaluate machine learning models to predict students' academic performance in Mathematics and Portuguese.
+
+4. **📈 Improve Academic Performance**:
+   - Provide actionable insights and recommendations to educators and policymakers to help improve students' academic outcomes.
+
+5. **📚 Contribute to Educational Research**:
+   - Contribute to the body of research on educational data analysis and predictive modeling.
+
 ## ⚙️ Functionality
+
+The Streamlit application offers the following functionalities:
+
+1. **🏠 Home Page**:
+   - Overview of the project, including its objectives and key features.
+   - Introduction to the project team and a link to the GitHub repository.
+
+2. **🎯 Objectives**:
+   - Detailed description of the project's main goals and expected outcomes.
+
+3. **📊 Power BI**:
+   - Interactive visualizations and insights into the dataset using Power BI.
+   - Exploration of various aspects of the data, such as the distribution of grades, correlations between variables, and trends over time.
+
+4. **🔮 Prediction**:
+   - Allows users to make predictions about students' academic performance in Mathematics and Portuguese.
+   - Users can select the subject and input relevant features to obtain predictions.
+   - Utilizes two machine learning models:
+     - **📐 AdaBoostClassifier** for Mathematics: Combines multiple weak classifiers to create a strong classifier.
+     - **📚 BaggingClassifier** for Portuguese: Improves stability and accuracy by training multiple instances of the same classifier on different subsets of the data.
+   - Displays the accuracy of the models and visualizes the confusion matrix for each prediction.
+
+5. **📈 Model Evaluation**:
+   - Provides detailed evaluation metrics for the machine learning models, including accuracy and confusion matrices.
+
+6. **💻 User Interaction**:
+   - Interactive interface for users to input data and obtain predictions.
+   - User-friendly design with clear instructions and visual feedback.
+
+These functionalities ensure that the application is both informative and easy to use, providing valuable insights into students' academic performance and helping educators make data-driven decisions.
 
 ## 🛠️ Tools Used
 
@@ -31,30 +78,30 @@ The following tools and technologies were used to carry out this project:
 
 The development process of this project was carried out in several key stages, each of which was crucial for the success of the analysis and prediction of students' academic performance. Below are the main stages of the development process:
 
-### 1. Data Collection
+### 1. 📊 Data Collection
 The first stage of the project involved data collection. Data was gathered from various sources, including academic records, student surveys, and demographic information. This data provided a solid foundation for subsequent analysis.
 
-### 2. Data Cleaning and Preprocessing
+### 2. 🧹 Data Cleaning and Preprocessing
 Once the data was collected, an exhaustive data cleaning and preprocessing process was conducted. This included removing null values, handling outliers, and normalizing the data. Additionally, transformations such as encoding categorical variables and creating new features from existing ones were performed.
 
-### 3. Exploratory Data Analysis (EDA)
+### 3. 🔍 Exploratory Data Analysis (EDA)
 Exploratory Data Analysis (EDA) was a crucial stage for understanding the relationships and patterns in the data. Various visualization techniques and descriptive statistics were used to identify trends, correlations, and potential factors influencing students' academic performance.
 
-### 4. Feature Selection
+### 4. 🛠️ Feature Selection
 To improve the accuracy of the prediction models, a feature selection process was carried out. Techniques such as SelectKBest and feature importance analysis were used to identify the most relevant variables for the model.
 
-### 5. Building Machine Learning Models
+### 5. 🤖 Building Machine Learning Models
 Several machine learning models were built to predict students' academic performance. Different models were applied and evaluated, but the two that achieved the best results were:
-- **AdaBoostClassifier**: Used for predicting performance in Mathematics. This model combines multiple weak classifiers to create a strong classifier.
-- **BaggingClassifier**: Used for predicting performance in Portuguese. This model improves stability and accuracy by training multiple instances of the same classifier on different subsets of the data.
+- **📐 AdaBoostClassifier**: Used for predicting performance in Mathematics. This model combines multiple weak classifiers to create a strong classifier.
+- **📚 BaggingClassifier**: Used for predicting performance in Portuguese. This model improves stability and accuracy by training multiple instances of the same classifier on different subsets of the data.
 
-### 6. Model Evaluation
+### 6. 📈 Model Evaluation
 The models were evaluated using cross-validation techniques (K-Fold) to ensure their robustness and accuracy. Metrics such as accuracy, confusion matrix, and other relevant metrics were calculated to assess the performance of the models.
 
-### 7. Implementation and Visualization
+### 7. 💻 Implementation and Visualization
 Finally, the models were implemented in an interactive application using Streamlit. The application allows users to input data and obtain predictions about students' academic performance. Additionally, interactive visualizations were included to explore the data and model results.
 
-### 8. Continuous Improvement
+### 8. 🔄 Continuous Improvement
 The project was designed with a focus on continuous improvement. The models are monitored and updated regularly to ensure they remain accurate and relevant. Additionally, user feedback is collected to improve the functionality and usability of the application.
 
 This structured and meticulous development process ensured that the project met its objectives and provided valuable insights to improve students' academic performance.
