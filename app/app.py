@@ -34,11 +34,11 @@ st.sidebar.markdown("## Project Members")
 st.sidebar.markdown("""
 | Name           | Special Characteristic         |
 |----------------|--------------------------------|
-| Silvia Alonso  | 🥇 Expert in data wrangling     |
-| Juan Duran     | 🌐 Skilled in Streamlit         |
-| Ana Pineda     | 🏆 Spanish Excel Champion       |
-| Andrea Lafarga | 📊 Expert in data management    |
-""")
+| [Silvia Alonso](https://github.com/datasilvia)  | 🥇 Expert in data wrangling     |
+| [Juan Duran](https://github.com/Jotis86)     | 🌐 Skilled in Streamlit         |
+| [Ana Pineda](https://github.com/asdianita)     | 🏆 Spanish Excel Champion       |
+| [Andrea Lafarga](https://github.com/AndreaLaHe) | 📊 Expert in data management    |
+""", unsafe_allow_html=True)
 
 # GitHub Repository Link
 st.sidebar.markdown("""
