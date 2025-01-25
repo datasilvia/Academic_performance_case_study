@@ -5,6 +5,10 @@ import numpy as np
 from sklearn.ensemble import AdaBoostClassifier
 from sklearn.model_selection import KFold
 from sklearn.metrics import confusion_matrix, accuracy_score
+from sklearn.ensemble import BaggingClassifier
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.feature_selection import SelectKBest, f_classif
+from sklearn.pipeline import Pipeline
 import seaborn as sns
 import matplotlib.pyplot as plt
 
@@ -158,16 +162,23 @@ elif option == 'Prediction':
     portuguese_data = pd.read_csv(portuguese_data_path)
 
 
-    # Seleccionar la asignatura a predecir 
-    st.markdown("### Select the subject to predict:")
-    subject = st.radio('', ['Mathematics', 'Portuguese'], index=0, horizontal=True)
+    # Seleccionar la asignatura a predecir
+    subject = st.selectbox('Select the subject to predict:', ['Mathematics', 'Portuguese'])
 
     # Definir las características y la variable objetivo
-    X = math_data[['school_GP', 'age', 'address_urban', 'Medu', 'Fedu', 'studytime', 'failures', 'freetime', 'Dalc', 'Walc']]
-    y = math_data['math_pass']
+    if subject == 'Mathematics':
+        X = math_data[['school_GP', 'age', 'address_urban', 'Medu', 'Fedu', 'studytime', 'failures', 'freetime', 'Dalc', 'Walc']]
+        y = math_data['math_pass']
+        modelo = AdaBoostClassifier(random_state=42)
+    else:
+        X = portuguese_data[['school_GP', 'age', 'address_urban', 'Medu', 'Fedu', 'studytime', 'failures', 'freetime', 'Dalc', 'Walc']]
+        y = portuguese_data['por_pass']
 
-    # Inicializar el clasificador
-    modelo = AdaBoostClassifier(random_state=42)
+        # Crear un pipeline con selección de características y modelo
+        modelo = Pipeline([
+            ('feature_selection', SelectKBest(score_func=f_classif, k=10)),
+            ('bagging', BaggingClassifier(estimator=DecisionTreeClassifier(max_depth=5), n_estimators=10, random_state=42))
+        ])
 
     # Configurar K-Fold
     kf = KFold(n_splits=5, shuffle=True, random_state=42)
@@ -190,7 +201,7 @@ elif option == 'Prediction':
 
     # Mostrar la precisión del modelo
     accuracy = accuracy_score(y_real_total, y_pred_total)
-    st.write(f'Accuracy of the Model **AdaBoostClassifier**: {accuracy:.3f}')
+    st.write(f'Accuracy of the {subject} Model: {accuracy:.3f}')
 
     # Pedir al usuario que ingrese los valores de las características
     st.write("### Enter the values for the following features to make a prediction:")
@@ -221,4 +232,4 @@ elif option == 'Prediction':
 
     # Hacer la predicción
     prediction = modelo.predict(input_data)
-    st.write(f'### The predicted math pass status is: {"🎉 Pass" if prediction[0] == 1 else "❌ Fail"}')
+    st.write(f'### The predicted {subject.lower()} pass status is: {"🎉 Pass" if prediction[0] == 1 else "❌ Fail"}')
