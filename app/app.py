@@ -141,11 +141,10 @@ elif option == 'Prediction':
     st.write("""
     The prediction section involves building and evaluating machine learning models to forecast students' performance.
     The models used include:
-    - Linear Regression
-    - Decision Trees
-    - Random Forest
-    - Support Vector Machines (SVM)
+    - **AdaBoostClassifier**: AdaBoost (Adaptive Boosting) is an ensemble learning method that combines multiple weak classifiers to create a strong classifier. It works by training classifiers sequentially, each trying to correct the errors of its predecessor. The final model is a weighted sum of the individual classifiers.
+    - **BaggingClassifier**: Bagging (Bootstrap Aggregating) is another ensemble learning method that improves the stability and accuracy of machine learning algorithms. It works by training multiple instances of the same classifier on different subsets of the training data (created using bootstrapping) and then averaging their predictions.
     """)
+
 
     # Cargar los datos desde el archivo CSV
     data_path = os.path.join(current_dir, 'df_limpito_EDA.csv')
@@ -191,7 +190,7 @@ elif option == 'Prediction':
 
     # Mostrar la precisión del modelo
     accuracy = accuracy_score(y_real_total, y_pred_total)
-    st.write(f'Accuracy of the Model: {accuracy:.3f}')
+    st.write(f'Accuracy of the Model **AdaBoostClassifier**: {accuracy:.3f}')
 
     # Pedir al usuario que ingrese los valores de las características
     st.write("### Enter the values for the following features to make a prediction:")
