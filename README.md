@@ -29,6 +29,36 @@ The following tools and technologies were used to carry out this project:
 
 ## 🚀 Development Process
 
+The development process of this project was carried out in several key stages, each of which was crucial for the success of the analysis and prediction of students' academic performance. Below are the main stages of the development process:
+
+### 1. Data Collection
+The first stage of the project involved data collection. Data was gathered from various sources, including academic records, student surveys, and demographic information. This data provided a solid foundation for subsequent analysis.
+
+### 2. Data Cleaning and Preprocessing
+Once the data was collected, an exhaustive data cleaning and preprocessing process was conducted. This included removing null values, handling outliers, and normalizing the data. Additionally, transformations such as encoding categorical variables and creating new features from existing ones were performed.
+
+### 3. Exploratory Data Analysis (EDA)
+Exploratory Data Analysis (EDA) was a crucial stage for understanding the relationships and patterns in the data. Various visualization techniques and descriptive statistics were used to identify trends, correlations, and potential factors influencing students' academic performance.
+
+### 4. Feature Selection
+To improve the accuracy of the prediction models, a feature selection process was carried out. Techniques such as SelectKBest and feature importance analysis were used to identify the most relevant variables for the model.
+
+### 5. Building Machine Learning Models
+Several machine learning models were built to predict students' academic performance. Different models were applied and evaluated, but the two that achieved the best results were:
+- **AdaBoostClassifier**: Used for predicting performance in Mathematics. This model combines multiple weak classifiers to create a strong classifier.
+- **BaggingClassifier**: Used for predicting performance in Portuguese. This model improves stability and accuracy by training multiple instances of the same classifier on different subsets of the data.
+
+### 6. Model Evaluation
+The models were evaluated using cross-validation techniques (K-Fold) to ensure their robustness and accuracy. Metrics such as accuracy, confusion matrix, and other relevant metrics were calculated to assess the performance of the models.
+
+### 7. Implementation and Visualization
+Finally, the models were implemented in an interactive application using Streamlit. The application allows users to input data and obtain predictions about students' academic performance. Additionally, interactive visualizations were included to explore the data and model results.
+
+### 8. Continuous Improvement
+The project was designed with a focus on continuous improvement. The models are monitored and updated regularly to ensure they remain accurate and relevant. Additionally, user feedback is collected to improve the functionality and usability of the application.
+
+This structured and meticulous development process ensured that the project met its objectives and provided valuable insights to improve students' academic performance.
+
 ## 📈 Results
 
 ## 📋 Trello Board
@@ -41,9 +71,77 @@ You can see more details about how we used the Kanban board in the section [Kanb
 
 ## 🌐 Streamlit App
 
+The Streamlit application provides an interactive interface for exploring the dataset and making predictions about students' academic performance. Below are the key features and functionalities of the Streamlit app:
+
+### Key Features
+
+1. **🏠 Home Page**: 
+   - Provides an overview of the project, including its objectives and key features.
+   - Introduces the project team and provides a link to the GitHub repository.
+
+2. **🎯 Objectives**:
+   - Details the main goals of the project, such as analyzing factors affecting academic performance, identifying patterns, and building predictive models.
+   - Explains the expected outcomes, including improved academic performance, informed decision-making, and enhanced student support.
+
+3. **📊 Power BI**:
+   - Displays interactive visualizations and insights into the dataset using Power BI.
+   - Allows users to explore various aspects of the data, such as the distribution of grades, correlations between variables, and trends over time.
+
+4. **🔮 Prediction**:
+   - Enables users to make predictions about students' academic performance in Mathematics and Portuguese.
+   - Users can select the subject and input relevant features to obtain predictions.
+   - The app uses two machine learning models:
+     - **📐 AdaBoostClassifier** for Mathematics: Combines multiple weak classifiers to create a strong classifier.
+     - **📚 BaggingClassifier** for Portuguese: Improves stability and accuracy by training multiple instances of the same classifier on different subsets of the data.
+   - Displays the accuracy of the models and visualizes the confusion matrix for each prediction.
+
 ## 📊 PowerBI
 
 ## 🤖 Machine Learning Model
+
+In this project, we applied various machine learning models to predict students' academic performance. After evaluating multiple models, we identified two that provided the best results for predicting performance in Mathematics and Portuguese. Below is a detailed description of the models used and the process followed:
+
+### Models Used
+
+1. **📐 AdaBoostClassifier**:
+   - **Purpose**: Used for predicting students' performance in Mathematics.
+   - **Description**: AdaBoost (Adaptive Boosting) is an ensemble learning method that combines multiple weak classifiers to create a strong classifier. It works by training classifiers sequentially, each trying to correct the errors of its predecessor. The final model is a weighted sum of the individual classifiers.
+   - **Implementation**: The AdaBoostClassifier was implemented using the `AdaBoostClassifier` class from the `sklearn.ensemble` module.
+
+2. **📚 BaggingClassifier**:
+   - **Purpose**: Used for predicting students' performance in Portuguese.
+   - **Description**: Bagging (Bootstrap Aggregating) is another ensemble learning method that improves the stability and accuracy of machine learning algorithms. It works by training multiple instances of the same classifier on different subsets of the training data (created using bootstrapping) and then averaging their predictions.
+   - **Implementation**: The BaggingClassifier was implemented using a pipeline that includes feature selection (`SelectKBest`) and the `BaggingClassifier` class from the `sklearn.ensemble` module, with a `DecisionTreeClassifier` as the base estimator.
+
+### Model Training and Evaluation
+
+#### 📐 Mathematics (AdaBoostClassifier)
+
+- **Data Preparation**: The dataset for Mathematics was preprocessed and the relevant features were selected.
+- **Training**: The AdaBoostClassifier was trained using the selected features and the target variable (`math_pass`).
+- **Evaluation**: The model was evaluated using K-Fold cross-validation to ensure robustness and accuracy. Metrics such as accuracy and confusion matrix were calculated to assess the model's performance.
+
+#### 📚 Portuguese (BaggingClassifier)
+
+- **Data Preparation**: The dataset for Portuguese was preprocessed and the relevant features were selected.
+- **Training**: A pipeline was created that included feature selection (`SelectKBest`) and the BaggingClassifier with a `DecisionTreeClassifier` as the base estimator. The pipeline was trained using the selected features and the target variable (`por_pass`).
+- **Evaluation**: The model was evaluated using K-Fold cross-validation. Metrics such as accuracy and confusion matrix were calculated to assess the model's performance.
+
+### Results
+
+- **📐 Mathematics (AdaBoostClassifier)**:
+  - **Accuracy**: The model achieved a high accuracy in predicting students' performance in Mathematics.
+  - **Confusion Matrix**: The confusion matrix provided insights into the model's performance, showing the number of true positives, true negatives, false positives, and false negatives.
+
+- **📚 Portuguese (BaggingClassifier)**:
+  - **Accuracy**: The model achieved a high accuracy in predicting students' performance in Portuguese.
+  - **Confusion Matrix**: The confusion matrix provided insights into the model's performance, showing the number of true positives, true negatives, false positives, and false negatives.
+
+### Conclusion
+
+The use of **📐 AdaBoostClassifier** for Mathematics and **📚 BaggingClassifier** for Portuguese provided robust and accurate predictions of students' academic performance. These models were selected based on their superior performance compared to other models evaluated during the project. The implementation of these models in an interactive Streamlit application allows educators and researchers to make data-driven decisions to improve students' academic outcomes.
+
+By following a structured development process and leveraging advanced machine learning techniques, this project demonstrates the potential of predictive analytics in the field of education.
 
 ## 👥 Project Members
 
