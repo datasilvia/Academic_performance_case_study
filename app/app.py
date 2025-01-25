@@ -140,3 +140,9 @@ elif option == 'Prediction':
     - Random Forest
     - Support Vector Machines (SVM)
     """)
+
+    # Cargar los datos desde el archivo CSV
+    data_path = os.path.join(current_dir, 'df_limpito_EDA.csv')
+    data = pd.read_csv(data_path)
+    st.write("Here are the first 5 rows of your dataset:")
+    st.write(data.head())
