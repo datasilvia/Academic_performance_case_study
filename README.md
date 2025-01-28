@@ -142,6 +142,37 @@ The Streamlit application provides an interactive interface for exploring the da
 
 ## 📊 PowerBI
 
+The Power BI dashboard provides interactive visualizations and insights into the dataset. It allows users to explore various aspects of the data, such as the distribution of students' grades, correlations between different variables, and trends and patterns in the data. The dashboard is divided into three main tabs, each focusing on different aspects of the dataset:
+
+### General Summary
+- **Overview**: This tab provides an overview of the dataset, including key statistics and visualizations that summarize the overall performance of students.
+- **Key Metrics**: Displays important metrics such as average grades, pass rates, and other relevant statistics.
+- **Visualizations**: Includes charts and graphs that show the distribution of grades, overall performance trends, and other summary statistics.
+
+### Family Analysis
+- **Impact of Family Background**: This tab focuses on the impact of family background on students' performance, including parental education levels, family support, and other related factors.
+- **Parental Education Levels**: Visualizes the correlation between parental education levels and student performance.
+- **Family Support**: Analyzes how family support and involvement affect students' academic outcomes.
+
+### Student Analysis
+- **Individual Performance**: Offers a detailed analysis of individual student performance, allowing for a closer look at specific cases and trends.
+- **Case Studies**: Provides case studies of individual students, highlighting their performance and identifying factors that may have influenced their outcomes.
+- **Trends and Patterns**: Identifies trends and patterns in individual student performance over time.
+
+### Snapshots of the Power BI Dashboard
+Below are some snapshots of the Power BI dashboard:
+
+![General Summary](./images/picture_1.png)
+*General Summary*
+
+![Family Analysis](./images/picture_2.png)
+*Family Analysis*
+
+![Student Analysis](./images/picture_3.png)
+*Student Analysis*
+
+These visualizations help users gain a deeper understanding of the dataset and make data-driven decisions to improve students' academic performance. The Power BI dashboard is a powerful tool for educators, researchers, and policymakers to explore and analyze educational data.
+
 ## 🤖 Machine Learning Model
 
 In this project, we applied various machine learning models to predict students' academic performance. After evaluating multiple models, we identified two that provided the best results for predicting performance in Mathematics and Portuguese. Below is a detailed description of the models used and the process followed:
