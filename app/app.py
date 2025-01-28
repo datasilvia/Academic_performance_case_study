@@ -137,8 +137,19 @@ elif option == 'Power BI':
     - Distribution of students' grades.
     - Correlation between different variables.
     - Trends and patterns in the data.
+
+    The Power BI dashboard is divided into three tabs:
+    - **General Summary**: Provides an overview of the dataset, including key statistics and visualizations that summarize the overall performance of students.
+    - **Family Analysis**: Focuses on the impact of family background on students' performance, including parental education levels, family support, and other related factors.
+    - **Student Analysis**: Offers a detailed analysis of individual student performance, allowing for a closer look at specific cases and trends.
+
+    Below are some snapshots of the Power BI dashboard:
     """)
-    #st.image(os.path.join(current_dir, 'powerbi_dashboard.png'), use_column_width=True)
+
+    # Añadir imágenes del Power BI
+    st.image(os.path.join(current_dir, 'picture_1.png'), caption='General Summary', use_column_width=True)
+    st.image(os.path.join(current_dir, 'picture_2.png'), caption='Family Analysis', use_column_width=True)
+    st.image(os.path.join(current_dir, 'picture_3.png'), caption='Student Analysis', use_column_width=True)
 
 elif option == 'Prediction':
     st.title('🔮 Prediction')
