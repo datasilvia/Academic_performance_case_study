@@ -230,6 +230,36 @@ elif option == 'Prediction':
         'Walc': [Walc]
     })
 
-    # Hacer la predicción
-    prediction = modelo.predict(input_data)
-    st.write(f'### The predicted {subject.lower()} pass status is: {"🎉 Pass" if prediction[0] == 1 else "❌ Fail"}')
+    # Inicializar una lista para almacenar todas las predicciones
+    if 'predictions' not in st.session_state:
+        st.session_state['predictions'] = pd.DataFrame()
+
+    # Crear una columna para los botones
+    col1, col2 = st.columns(2)
+
+    # Botón para hacer la predicción
+    with col1:
+        if st.button('Predict'):
+            # Hacer la predicción
+            prediction = modelo.predict(input_data)
+            st.write(f'### The predicted {subject.lower()} pass status is: {"🎉 Pass" if prediction[0] == 1 else "❌ Fail"}')
+
+            # Añadir la predicción al DataFrame de predicciones
+            input_data['prediction'] = prediction
+            st.session_state['predictions'] = pd.concat([st.session_state['predictions'], input_data], ignore_index=True)
+
+    # Botón para resetear las predicciones
+    with col2:
+        if st.button('Reset Predictions'):
+            st.session_state['predictions'] = pd.DataFrame()
+            st.write("Predictions have been reset.")
+
+    # Botón para descargar las predicciones en un archivo CSV
+    if not st.session_state['predictions'].empty:
+        csv = st.session_state['predictions'].to_csv(index=False).encode('utf-8')
+        st.download_button(
+            label="📥 Download Predictions as CSV",
+            data=csv,
+            file_name='predictions.csv',
+            mime='text/csv',
+        )
