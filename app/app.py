@@ -23,7 +23,7 @@ main_image_path = os.path.join(current_dir, 'principal.png')
 sidebar_image_path = os.path.join(current_dir, 'menu.png') 
 
 # Streamlit app
-st.sidebar.image(sidebar_image_path, use_column_width=True)
+st.sidebar.image(sidebar_image_path, use_container_width=True)
 st.sidebar.title('Navigation')
 option = st.sidebar.radio('Select a page:', 
                           ['Home', 'Objectives', 'Power BI', 'Prediction'])
@@ -62,7 +62,7 @@ st.sidebar.markdown("""
     """, unsafe_allow_html=True)
 
 # Display the main image at the top of every page
-st.image(main_image_path, use_column_width=True)
+st.image(main_image_path, use_container_width=True)
 
 if option == 'Home':
     #st.title('📊 Academic Performance Analysis')
