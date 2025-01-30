@@ -147,9 +147,9 @@ elif option == 'Power BI':
     """)
 
     # Añadir imágenes del Power BI
-    st.image(os.path.join(current_dir, 'picture_1.png'), caption='General Summary', use_column_width=True)
-    st.image(os.path.join(current_dir, 'picture_2.png'), caption='Family Analysis', use_column_width=True)
-    st.image(os.path.join(current_dir, 'picture_3.png'), caption='Student Analysis', use_column_width=True)
+    st.image(os.path.join(current_dir, 'picture_1.png'), caption='General Summary', use_container_width=True)
+    st.image(os.path.join(current_dir, 'picture_2.png'), caption='Family Analysis', use_container_width=True)
+    st.image(os.path.join(current_dir, 'picture_3.png'), caption='Student Analysis', use_container_width=True)
 
 elif option == 'Prediction':
     st.title('🔮 Prediction')
