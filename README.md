@@ -114,6 +114,31 @@ You can see more details about how we used the Kanban board in the section [Kanb
 
 ## 🗂️ Project Structure
 
+📁 app/
+  📄 app.py
+  📄 df_limpito_EDA.csv
+  📄 ML_Math.csv
+  📄 ML_Portuguese.csv
+📁 EDA/
+  📄 analysis.md
+  📄 df_limpito_EDA.csv
+  📄 EDA.ipynb
+  📄 README.md
+📁 images/
+📁 kanban_board/
+  📄 README.md
+📄 df_limpito_EDA.csv
+📄 Estudio_colegios.pbix
+📄 limpito.ipynb
+📄 MachineSilvia.ipynb
+📄 ML_ANA.ipynb
+📄 ML_Math.csv
+📄 ML_Portuguese.csv
+📄 README.md
+📄 student-mat.csv
+📄 student-por.csv
+📄 LICENSE
+
 ## 🌐 Streamlit App
 
 The Streamlit application provides an interactive interface for exploring the dataset and making predictions about students' academic performance. Below are the key features and functionalities of the Streamlit app:
